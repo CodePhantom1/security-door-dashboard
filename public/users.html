@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users | Security Door Lock System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">🔐 <span>SecureDoor</span></div>
+    <nav>
+      <a href="index.html" >📊 Dashboard</a>
+      <a href="users.html" class="active">👤 Users</a>
+      <a href="logs.html" >📋 Access Logs</a>
+      <a href="camera.html" >📹 CCTV</a>
+      <a href="settings.html" >⚙️ Settings</a>
+    </nav>
+    <div class="sidebar-foot">Dell OptiPlex · Ubuntu Server</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1>Users</h1>
+        <p class="subtitle">Security Door Lock System</p>
+      </div>
+      <div class="topbar-right">
+        <span id="clock" class="clock"></span>
+        <span class="status-pill ok">● System Online</span>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Registered Users</h2>
+        <div class="toolbar">
+          <input id="userSearch" type="search" placeholder="Search name or ID…">
+          <button id="addUserBtn" class="btn">+ Add User</button>
+        </div>
+      </div>
+      <table>
+        <thead><tr><th>ID</th><th>Name</th><th>Role</th><th>Access Method</th><th>Enrolled</th><th>Status</th><th></th></tr></thead>
+        <tbody id="userTable"></tbody>
+      </table>
+    </section>
+
+    <dialog id="userDialog">
+      <form id="userForm" method="dialog">
+        <h2>Add User</h2>
+        <label>Name <input name="name" required></label>
+        <label>Role
+          <select name="role"><option>Staff</option><option>Student</option><option>Admin</option><option>Visitor</option></select>
+        </label>
+        <label>Access Method
+          <select name="method"><option>Fingerprint</option><option>Face</option><option>Palm</option><option>Password</option></select>
+        </label>
+        <div class="dialog-actions">
+          <button type="button" class="btn ghost" id="cancelUser">Cancel</button>
+          <button type="submit" class="btn">Save</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/users.js"></script>
+</body>
+</html>

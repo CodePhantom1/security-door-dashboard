@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Logs | Security Door Lock System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">🔐 <span>SecureDoor</span></div>
+    <nav>
+      <a href="index.html" >📊 Dashboard</a>
+      <a href="users.html" >👤 Users</a>
+      <a href="logs.html" class="active">📋 Access Logs</a>
+      <a href="camera.html" >📹 CCTV</a>
+      <a href="settings.html" >⚙️ Settings</a>
+    </nav>
+    <div class="sidebar-foot">Dell OptiPlex · Ubuntu Server</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1>Access Logs</h1>
+        <p class="subtitle">Security Door Lock System</p>
+      </div>
+      <div class="topbar-right">
+        <span id="clock" class="clock"></span>
+        <span class="status-pill ok">● System Online</span>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Access History</h2>
+        <div class="toolbar">
+          <input id="logSearch" type="search" placeholder="Search user…">
+          <select id="methodFilter"><option value="">All methods</option><option>Fingerprint</option><option>Face</option><option>Palm</option><option>Password</option></select>
+          <select id="resultFilter"><option value="">All results</option><option>Granted</option><option>Denied</option></select>
+          <button id="exportBtn" class="btn ghost">Export CSV</button>
+        </div>
+      </div>
+      <table>
+        <thead><tr><th>Date</th><th>Time</th><th>User</th><th>Method</th><th>Result</th></tr></thead>
+        <tbody id="logTable"></tbody>
+      </table>
+      <p id="logSummary" class="muted mt"></p>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/logs.js"></script>
+</body>
+</html>
