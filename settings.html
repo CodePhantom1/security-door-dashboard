@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | Security Door Lock System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">🔐 <span>SecureDoor</span></div>
+    <nav>
+      <a href="index.html" >📊 Dashboard</a>
+      <a href="users.html" >👤 Users</a>
+      <a href="logs.html" >📋 Access Logs</a>
+      <a href="camera.html" >📹 CCTV</a>
+      <a href="settings.html" class="active">⚙️ Settings</a>
+    </nav>
+    <div class="sidebar-foot">Dell OptiPlex · Ubuntu Server</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1>Settings</h1>
+        <p class="subtitle">Security Door Lock System</p>
+      </div>
+      <div class="topbar-right">
+        <span id="clock" class="clock"></span>
+        <span class="status-pill ok">● System Online</span>
+      </div>
+    </header>
+
+    <section class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h2>System Status</h2><button id="refreshBtn" class="btn ghost small">↻ Check all</button></div>
+        <ul id="statusList" class="device-list big"></ul>
+      </div>
+      <div class="panel">
+        <h2>Configuration</h2>
+        <form id="settingsForm" class="settings-form">
+          <label>Server IP address <input name="serverIp"></label>
+          <label>FZ05 device IP <input name="deviceIp"></label>
+          <label>Camera stream URL <input name="cameraUrl"></label>
+          <label>Door unlock time (seconds) <input name="unlockTime" type="number" min="1" max="30"></label>
+          <label class="check"><input name="alertDenied" type="checkbox"> Alert on denied access</label>
+          <button class="btn" type="submit">Save Settings</button>
+          <span id="saveMsg" class="muted"></span>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

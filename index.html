@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Security Door Lock System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">🔐 <span>SecureDoor</span></div>
+    <nav>
+      <a href="index.html" class="active">📊 Dashboard</a>
+      <a href="users.html" >👤 Users</a>
+      <a href="logs.html" >📋 Access Logs</a>
+      <a href="camera.html" >📹 CCTV</a>
+      <a href="settings.html" >⚙️ Settings</a>
+    </nav>
+    <div class="sidebar-foot">Dell OptiPlex · Ubuntu Server</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1>Dashboard</h1>
+        <p class="subtitle">Security Door Lock System</p>
+      </div>
+      <div class="topbar-right">
+        <span id="clock" class="clock"></span>
+        <span class="status-pill ok">● System Online</span>
+      </div>
+    </header>
+
+    <section class="cards">
+      <div class="card"><h3>Registered Users</h3><p id="userCount">0</p><small>Enrolled on FZ05</small></div>
+      <div class="card"><h3>Today&#39;s Entries</h3><p id="entryCount">0</p><small id="deniedCount">0 denied</small></div>
+      <div class="card"><h3>Door Status</h3><p id="doorStatus" class="locked">LOCKED</p>
+        <button id="doorBtn" class="btn small">Unlock (5 s)</button></div>
+      <div class="card"><h3>Camera</h3><p id="cameraStatus" class="online">ONLINE</p><small>Front entrance</small></div>
+    </section>
+
+    <section class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h2>Recent Access</h2><a href="logs.html">View all →</a></div>
+        <table>
+          <thead><tr><th>User</th><th>Method</th><th>Time</th><th>Result</th></tr></thead>
+          <tbody id="accessTable"></tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h2>CCTV – Front Door</h2><a href="camera.html">Open →</a></div>
+        <div class="camera-feed small-feed"><span class="rec">● REC</span><span class="cam-label">CAM 01</span><span class="cam-time"></span><div class="no-signal">CCTV CAMERA FEED</div></div>
+        <h2 class="mt">Devices</h2>
+        <ul id="deviceList" class="device-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCTV | Security Door Lock System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">🔐 <span>SecureDoor</span></div>
+    <nav>
+      <a href="index.html" >📊 Dashboard</a>
+      <a href="users.html" >👤 Users</a>
+      <a href="logs.html" >📋 Access Logs</a>
+      <a href="camera.html" class="active">📹 CCTV</a>
+      <a href="settings.html" >⚙️ Settings</a>
+    </nav>
+    <div class="sidebar-foot">Dell OptiPlex · Ubuntu Server</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1>CCTV</h1>
+        <p class="subtitle">Security Door Lock System</p>
+      </div>
+      <div class="topbar-right">
+        <span id="clock" class="clock"></span>
+        <span class="status-pill ok">● System Online</span>
+      </div>
+    </header>
+
+    <section class="grid-cam">
+      <div class="panel">
+        <div class="panel-head"><h2>CAM 01 – Front Entrance</h2><span class="status-pill ok">● Live</span></div>
+        <div class="camera-feed big-feed" id="mainFeed">
+          <span class="rec">● REC</span><span class="cam-label">CAM 01</span><span class="cam-time"></span>
+          <div class="no-signal">CCTV CAMERA FEED<br><small>Stream will be connected in Step 6 (RTSP / ONVIF / HTTP)</small></div>
+        </div>
+        <div class="toolbar mt">
+          <button id="snapBtn" class="btn">📸 Take Snapshot</button>
+          <button id="fullBtn" class="btn ghost">⛶ Fullscreen</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Snapshots</h2>
+        <ul id="snapList" class="snap-list"><li class="muted">No snapshots yet.</li></ul>
+        <h2 class="mt">Camera Info</h2>
+        <table class="kv">
+          <tr><th>Location</th><td>Front door</td></tr>
+          <tr><th>Connection</th><td>Ethernet via router</td></tr>
+          <tr><th>Protocol</th><td>To be confirmed</td></tr>
+          <tr><th>Resolution</th><td>1080p</td></tr>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/camera.js"></script>
+</body>
+</html>
